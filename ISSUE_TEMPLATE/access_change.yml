@@ -1,0 +1,30 @@
+name: "Access Change (Add/Remove Members)"
+description: "Request to add/remove members for a project team"
+title: "[Access] <project> add/remove members"
+labels: ["admin", "access"]
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project (short name)
+      placeholder: "neurovision"
+    validations:
+      required: true
+  - type: textarea
+    id: add
+    attributes:
+      label: Add these GitHub usernames (one per line)
+      placeholder: |
+        newmember1
+        newmember2
+  - type: textarea
+    id: remove
+    attributes:
+      label: Remove these GitHub usernames (one per line)
+      placeholder: |
+        exmember1
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: "Any time constraints or context"

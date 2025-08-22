@@ -1,0 +1,43 @@
+name: "Create Project Repos"
+description: "Request a new project: private + (optional) public repo, with team lead(s) and members"
+title: "[New Project] <project-name>"
+labels: ["admin", "new-project"]
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project name (short)
+      description: Used for repo names, e.g. `ixi-<project>-private` and `ixi-<project>-public`
+      placeholder: "neurovision"
+    validations:
+      required: true
+  - type: dropdown
+    id: public_needed
+    attributes:
+      label: Create public repo too?
+      options: ["Yes","No"]
+    validations:
+      required: true
+  - type: textarea
+    id: leads
+    attributes:
+      label: Team leader GitHub usernames
+      description: One per line, without @
+      placeholder: |
+        yu-prof
+        teamlead1
+    validations:
+      required: true
+  - type: textarea
+    id: members
+    attributes:
+      label: Initial member GitHub usernames (optional)
+      description: One per line, without @
+      placeholder: |
+        contributor1
+        contributor2
+  - type: textarea
+    id: summary
+    attributes:
+      label: One-paragraph summary
+      placeholder: "Goal, scope, and any constraints"
